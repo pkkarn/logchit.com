@@ -40,6 +40,14 @@ export const postsMetadata: PostMetadata[] = [
     tags: ['AI', 'Gemini', 'Generative-Art'],
     readTime: '5 min read',
   },
+  {
+    slug: 'serverless-deployment-github-pages',
+    title: 'Zero-Cost Serverless: Automating Deployments with GitHub Pages',
+    date: '2025-12-24',
+    description: 'A masterclass on building CI/CD pipelines with GitHub Actions and connecting custom domains for serverless applications.',
+    tags: ['DevOps', 'GitHub', 'Serverless'],
+    readTime: '7 min read',
+  },
 ];
 
 // Import markdown content
@@ -47,10 +55,12 @@ import consensusContent from './understanding-consensus-mechanisms-blockchain.md
 import ragContent from './optimizing-rag-pipelines-genai.md?raw';
 import brainContent from './brain.md?raw';
 import geminiTutorialContent from './gemini-ai-tutorial.md?raw';
+import serverlessDeploymentContent from './serverless-deployment-github-pages.md?raw';
 
 export const postsContent: Record<string, string> = {
   'understanding-consensus-mechanisms-blockchain': consensusContent,
   'optimizing-rag-pipelines-genai': ragContent,
   'brain': brainContent,
   'gemini-ai-tutorial': geminiTutorialContent,
+  'serverless-deployment-github-pages': serverlessDeploymentContent,
 };

@@ -21,7 +21,7 @@ const Footer = () => {
                 <Terminal className="h-5 w-5 text-primary" />
               </div>
               <span className="font-display text-lg font-semibold text-foreground">
-                Dev<span className="text-primary">Architect</span>
+                Log<span className="text-primary">Chit</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">

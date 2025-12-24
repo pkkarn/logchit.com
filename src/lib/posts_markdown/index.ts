@@ -54,6 +54,15 @@ export const postsMetadata: PostMetadata[] = [
     readTime: '7 min read',
     thumbnail: '/thumbnails/blockchain.png',
   },
+  {
+    slug: 'deploy-react-aws-ec2-github-actions',
+    title: 'Deploying React to AWS EC2 with GitHub Actions: A Complete CI/CD Guide',
+    date: '2025-12-24',
+    description: 'Learn how to automate your React deployments to AWS EC2 using GitHub Actions and Nginx for a robust and scalable CI/CD pipeline.',
+    tags: ['AWS', 'GitHub Actions', 'React', 'DevOps'],
+    readTime: '7 min read',
+    thumbnail: '/thumbnails/aws-ec2.png',
+  },
 ];
 
 // Import markdown content
@@ -62,6 +71,7 @@ import ragContent from './optimizing-rag-pipelines-genai.md?raw';
 import brainContent from './brain.md?raw';
 import geminiTutorialContent from './gemini-ai-tutorial.md?raw';
 import serverlessDeploymentContent from './serverless-deployment-github-pages.md?raw';
+import awsEc2DeploymentContent from './deploy-react-aws-ec2-github-actions.md?raw';
 
 export const postsContent: Record<string, string> = {
   'understanding-consensus-mechanisms-blockchain': consensusContent,
@@ -69,4 +79,5 @@ export const postsContent: Record<string, string> = {
   'brain': brainContent,
   'gemini-ai-tutorial': geminiTutorialContent,
   'serverless-deployment-github-pages': serverlessDeploymentContent,
+  'deploy-react-aws-ec2-github-actions': awsEc2DeploymentContent,
 };

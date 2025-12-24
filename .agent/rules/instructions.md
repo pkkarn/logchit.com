@@ -34,4 +34,8 @@ The design must look expensive, stable, and high-tech.
 
 Most Important instruction. whenever we ask you to generate new markdown and all make sure you
 
-add markdown inside @posts_markdown folder and then add the entry inside @posts_markdown/index.ts and then
+add markdown inside @posts_markdown folder and then add the entry inside @posts_markdown/index.ts and then also add thumbnails in @thumbnail and attach that... do one more thing to generate thumbnail use this image prompt where change the [SUBJECT] context depending topic, given image prompt...
+
+```
+[SUBJECT], cyber-minimalist style, deep slate background, glowing electric teal and soft violet accents, cinematic lighting, ultra-detailed, premium high-tech aesthetic, 8k resolution. in 16:9 ratio image size
+`

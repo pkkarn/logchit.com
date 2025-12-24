@@ -63,6 +63,15 @@ export const postsMetadata: PostMetadata[] = [
     readTime: '7 min read',
     thumbnail: '/thumbnails/aws-ec2.png',
   },
+  {
+    slug: 'four-phases-of-interest-development',
+    title: 'The Four Phases of Interest Development: A Framework for Mastery',
+    date: '2025-12-24',
+    description: 'Understanding how fleeting moments of curiosity evolve into lifelong passions through the Hidi and Renninger model.',
+    tags: ['Psychology', 'Learning', 'Productivity'],
+    readTime: '6 min read',
+    thumbnail: '/thumbnails/interest-development.png',
+  },
 ];
 
 // Import markdown content
@@ -72,6 +81,7 @@ import brainContent from './brain.md?raw';
 import geminiTutorialContent from './gemini-ai-tutorial.md?raw';
 import serverlessDeploymentContent from './serverless-deployment-github-pages.md?raw';
 import awsEc2DeploymentContent from './deploy-react-aws-ec2-github-actions.md?raw';
+import interestDevelopmentContent from './four-phases-of-interest-development.md?raw';
 
 export const postsContent: Record<string, string> = {
   'understanding-consensus-mechanisms-blockchain': consensusContent,
@@ -80,4 +90,5 @@ export const postsContent: Record<string, string> = {
   'gemini-ai-tutorial': geminiTutorialContent,
   'serverless-deployment-github-pages': serverlessDeploymentContent,
   'deploy-react-aws-ec2-github-actions': awsEc2DeploymentContent,
+  'four-phases-of-interest-development': interestDevelopmentContent,
 };

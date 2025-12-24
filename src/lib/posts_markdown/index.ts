@@ -5,6 +5,7 @@ export interface PostMetadata {
   description: string;
   tags: string[];
   readTime: string;
+  thumbnail: string;
 }
 
 export const postsMetadata: PostMetadata[] = [
@@ -15,6 +16,7 @@ export const postsMetadata: PostMetadata[] = [
     description: 'A deep dive into Proof of Work vs Proof of Stake consensus mechanisms, exploring their trade-offs in security, scalability, and energy efficiency.',
     tags: ['Blockchain', 'Architecture', 'Web3'],
     readTime: '8 min read',
+    thumbnail: '/thumbnails/blockchain.png',
   },
   {
     slug: 'optimizing-rag-pipelines-genai',
@@ -23,6 +25,7 @@ export const postsMetadata: PostMetadata[] = [
     description: 'Practical strategies for reducing latency and improving accuracy in Retrieval Augmented Generation systems for production LLM applications.',
     tags: ['AI', 'Python', 'LLM'],
     readTime: '6 min read',
+    thumbnail: '/thumbnails/rag.png',
   },
   {
     slug: 'brain',
@@ -31,6 +34,7 @@ export const postsMetadata: PostMetadata[] = [
     description: 'A deep dive into Proof of Work vs Proof of Stake consensus mechanisms, exploring their trade-offs in security, scalability, and energy efficiency.',
     tags: ['Blockchain', 'Architecture', 'Web3'],
     readTime: '8 min read',
+    thumbnail: '/thumbnails/brain.png',
   },
   {
     slug: 'gemini-ai-tutorial',
@@ -39,6 +43,7 @@ export const postsMetadata: PostMetadata[] = [
     description: 'A comprehensive guide to leveraging Gemini Flash models for speed and Nano Banana for state-of-the-art image generation via API.',
     tags: ['AI', 'Gemini', 'Generative-Art'],
     readTime: '5 min read',
+    thumbnail: '/thumbnails/gemini.png',
   },
   {
     slug: 'serverless-deployment-github-pages',
@@ -47,6 +52,7 @@ export const postsMetadata: PostMetadata[] = [
     description: 'A masterclass on building CI/CD pipelines with GitHub Actions and connecting custom domains for serverless applications.',
     tags: ['DevOps', 'GitHub', 'Serverless'],
     readTime: '7 min read',
+    thumbnail: '/thumbnails/blockchain.png',
   },
 ];
 

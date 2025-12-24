@@ -131,6 +131,14 @@ const BlogPost = () => {
           {/* Content with TOC */}
           <div className="flex flex-col xl:flex-row gap-8">
             <div className="w-full max-w-3xl overflow-hidden shrink-1">
+              {/* Header Image */}
+              <div className="mb-12 rounded-2xl overflow-hidden border border-border/50 shadow-glow-lg">
+                <img
+                  src={post.thumbnail}
+                  alt={post.title}
+                  className="w-full h-auto object-cover max-h-[400px]"
+                />
+              </div>
               <MarkdownRenderer content={post.content} />
             </div>
             <TableOfContents content={post.content} />

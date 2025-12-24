@@ -8,10 +8,22 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "/" },
+    { label: "Home", href: "#home" },
     { label: "Articles", href: "/#articles" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "#contact" }, // Footer anchor
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#") || href.startsWith("#")) {
+      const id = href.split("#")[1];
+      const element = document.getElementById(id);
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({ behavior: "smooth" });
+        setMobileMenuOpen(false);
+      }
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
@@ -35,6 +47,7 @@ const Navbar = () => {
             <Link
               key={item.label}
               to={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === item.href
                 ? "text-primary"
                 : "text-muted-foreground"
@@ -43,8 +56,8 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <Button variant="hero" size="sm">
-            Let's Connect
+          <Button variant="hero" size="sm" asChild>
+            <a href="mailto:p.k.karn786@gmail.com">Let's Connect</a>
           </Button>
         </div>
 
@@ -66,14 +79,14 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
               >
                 {item.label}
               </Link>
             ))}
-            <Button variant="hero" size="sm" className="w-full mt-2">
-              Let's Connect
+            <Button variant="hero" size="sm" className="w-full mt-2" asChild>
+              <a href="mailto:p.k.karn786@gmail.com">Let's Connect</a>
             </Button>
           </div>
         </div>

@@ -3,19 +3,32 @@ import Hero from "@/components/Hero";
 import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "@/lib/posts";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
   const posts = getAllPosts();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main>
         <Hero />
 
         {/* Articles Section */}
-        <section id="articles" className="py-24">
+        <section id="articles" className="py-24 scroll-mt-20">
           <div className="container mx-auto px-4 lg:px-8">
             {/* Section Header */}
             <div className="max-w-2xl mb-12">

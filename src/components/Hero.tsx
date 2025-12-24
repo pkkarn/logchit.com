@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Primary glow */}
@@ -71,8 +71,8 @@ const Hero = () => {
               Read Articles
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="heroOutline" size="xl" onClick={scrollToContact}>
-              Contact Me
+            <Button variant="heroOutline" size="xl" asChild>
+              <a href="mailto:p.k.karn786@gmail.com">Contact Me</a>
             </Button>
           </div>
 

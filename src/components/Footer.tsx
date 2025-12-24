@@ -1,14 +1,13 @@
-import { Github, Twitter, Linkedin, Mail, Terminal } from "lucide-react";
+import { Github, Linkedin, Mail, Terminal } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:hello@devarchitect.dev", label: "Email" },
+    { icon: Github, href: "https://github.com/pkkarn", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/pkkarn", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:p.k.karn786@gmail.com", label: "Email" },
   ];
 
   return (
@@ -64,7 +63,7 @@ const Footer = () => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground">
-              hello@devarchitect.dev
+              p.k.karn786@gmail.com
             </p>
           </div>
         </div>

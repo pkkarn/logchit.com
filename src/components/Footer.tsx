@@ -25,7 +25,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Building scalable digital architectures. Expertise in blockchain, AI, and enterprise systems.
+              A self journal of thoughts, ideas, and experiences that else wise would've been lost in the void of time.
             </p>
           </div>
 

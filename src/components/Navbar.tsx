@@ -10,6 +10,7 @@ const Navbar = () => {
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "Articles", href: "/#articles" },
+    { label: "About Me", href: "https://portfolio.logchit.com", isExternal: true },
     { label: "Contact", href: "#contact" }, // Footer anchor
   ];
 
@@ -44,17 +45,29 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <Link
-              key={item.label}
-              to={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === item.href
-                ? "text-primary"
-                : "text-muted-foreground"
-                }`}
-            >
-              {item.label}
-            </Link>
+            item.isExternal ? (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.label}
+                to={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === item.href
+                  ? "text-primary"
+                  : "text-muted-foreground"
+                  }`}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
           <Button variant="hero" size="sm" asChild>
             <a href="mailto:p.k.karn786@gmail.com">Let's Connect</a>
@@ -76,14 +89,26 @@ const Navbar = () => {
         <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
-              >
-                {item.label}
-              </Link>
+              item.isExternal ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary py-2"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
             <Button variant="hero" size="sm" className="w-full mt-2" asChild>
               <a href="mailto:p.k.karn786@gmail.com">Let's Connect</a>

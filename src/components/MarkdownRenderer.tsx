@@ -42,27 +42,30 @@ const CodeBlock = ({ language, children }: { language: string; children: string 
       <div className="absolute top-2 left-3 text-xs text-muted-foreground font-mono uppercase">
         {language}
       </div>
-      <SyntaxHighlighter
-        language={language}
-        style={oneDark}
-        customStyle={{
-          margin: 0,
-          borderRadius: "0.75rem",
-          padding: "2.5rem 1rem 1rem",
-          background: "hsl(var(--card))",
-          border: "1px solid hsl(var(--border))",
-          fontSize: "0.875rem",
-        }}
-        showLineNumbers
-        lineNumberStyle={{
-          minWidth: "2.5em",
-          paddingRight: "1em",
-          color: "hsl(var(--muted-foreground) / 0.4)",
-          userSelect: "none",
-        }}
-      >
-        {children}
-      </SyntaxHighlighter>
+      <div className="w-full overflow-x-auto rounded-xl border border-border bg-card">
+        <SyntaxHighlighter
+          language={language}
+          style={oneDark}
+          customStyle={{
+            margin: 0,
+            borderRadius: "0.75rem",
+            padding: "2.5rem 1rem 1rem",
+            background: "transparent",
+            border: "none",
+            fontSize: "0.875rem",
+            minWidth: "100%",
+          }}
+          showLineNumbers
+          lineNumberStyle={{
+            minWidth: "2.5em",
+            paddingRight: "1em",
+            color: "hsl(var(--muted-foreground) / 0.4)",
+            userSelect: "none",
+          }}
+        >
+          {children}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 };
@@ -73,7 +76,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       code({ className, children, ...props }: any) {
         const match = /language-(\w+)/.exec(className || "");
         const isInline = !match;
-        
+
         if (isInline) {
           return (
             <code className="px-1.5 py-0.5 rounded bg-muted text-primary text-sm font-mono" {...props}>
@@ -81,7 +84,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
             </code>
           );
         }
-        
+
         return (
           <CodeBlock language={match[1]}>
             {String(children).replace(/\n$/, "")}
@@ -109,8 +112,8 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       },
       a({ href, children }: any) {
         return (
-          <a 
-            href={href} 
+          <a
+            href={href}
             className="text-primary hover:underline"
             target={href?.startsWith("http") ? "_blank" : undefined}
             rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
@@ -140,7 +143,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   );
 
   return (
-    <div className="prose-custom">
+    <div className="prose-custom break-words overflow-hidden w-full">
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
         {content}
       </ReactMarkdown>

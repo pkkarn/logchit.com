@@ -85,48 +85,52 @@ const BlogPost = () => {
             </p>
 
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-8 border-b border-border/50">
-              <span className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                {formattedDate}
-              </span>
-              <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                {post.readingTime}
-              </span>
-              <div className="flex items-center gap-2 ml-auto">
-                <span className="flex items-center gap-1.5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 text-sm text-muted-foreground pb-8 border-b border-border/50">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+                <span className="flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  {formattedDate}
+                </span>
+                <span className="flex items-center gap-2">
+                  <Clock className="h-4 w-4" />
+                  {post.readingTime}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="flex items-center gap-1.5 mr-2">
                   <Share2 className="h-4 w-4" />
                   Share
                 </span>
-                <button
-                  onClick={() => handleShare("twitter")}
-                  className="p-2 rounded-md hover:bg-muted transition-colors"
-                  aria-label="Share on Twitter"
-                >
-                  <Twitter className="h-4 w-4" />
-                </button>
-                <button
-                  onClick={() => handleShare("linkedin")}
-                  className="p-2 rounded-md hover:bg-muted transition-colors"
-                  aria-label="Share on LinkedIn"
-                >
-                  <Linkedin className="h-4 w-4" />
-                </button>
-                <button
-                  onClick={() => handleShare("copy")}
-                  className="p-2 rounded-md hover:bg-muted transition-colors"
-                  aria-label="Copy link"
-                >
-                  <Copy className="h-4 w-4" />
-                </button>
+                <div className="flex items-center gap-1">
+                  <button
+                    onClick={() => handleShare("twitter")}
+                    className="p-2 rounded-md hover:bg-muted transition-colors"
+                    aria-label="Share on Twitter"
+                  >
+                    <Twitter className="h-4 w-4" />
+                  </button>
+                  <button
+                    onClick={() => handleShare("linkedin")}
+                    className="p-2 rounded-md hover:bg-muted transition-colors"
+                    aria-label="Share on LinkedIn"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </button>
+                  <button
+                    onClick={() => handleShare("copy")}
+                    className="p-2 rounded-md hover:bg-muted transition-colors"
+                    aria-label="Copy link"
+                  >
+                    <Copy className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
             </div>
           </header>
 
           {/* Content with TOC */}
-          <div className="flex gap-8">
-            <div className="max-w-3xl flex-1">
+          <div className="flex flex-col xl:flex-row gap-8">
+            <div className="w-full max-w-3xl overflow-hidden shrink-1">
               <MarkdownRenderer content={post.content} />
             </div>
             <TableOfContents content={post.content} />
